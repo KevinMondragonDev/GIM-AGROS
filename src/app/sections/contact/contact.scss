@@ -173,8 +173,26 @@
   }
 }
 
+.contact__trap {
+  display: none;
+}
+
+.contact__error {
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--orange-deep);
+  background: rgb(254 144 33 / 0.1);
+  font-size: 0.92rem;
+}
+
 .contact__submit {
   width: 100%;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: progress;
+  }
+
   justify-content: center;
   margin-top: 0.5rem;
 }

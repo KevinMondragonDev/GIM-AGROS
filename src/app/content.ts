@@ -11,6 +11,11 @@ export const CONTACT = {
   /** Número en formato internacional sin "+" ni espacios, p. ej. 5213312345678 */
   whatsapp: '',
   location: '',
+  /**
+   * Clave pública de Web3Forms (https://web3forms.com) para gimagrosweb@gmail.com.
+   * Mientras esté vacía, el formulario abre la app de correo del visitante.
+   */
+  web3formsKey: '00188a12-fd77-40ca-a769-e6773dd3d8e0',
 };
 
 export const NAV_LINKS = [
