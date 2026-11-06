@@ -1,7 +1,7 @@
 <section class="values" id="valores">
   <div class="container">
     <div class="values__head">
-      <p class="eyebrow" appReveal><b>03</b> Valores</p>
+      <p class="eyebrow" appReveal>Valores</p>
       <h2 class="values__title" appReveal="60">Nuestros valores</h2>
       <p class="values__intro" appReveal="120">
         Cinco principios que orientan nuestra forma de trabajar y de atender a cada cliente.
@@ -9,9 +9,9 @@
     </div>
 
     <ol class="values__list">
-      @for (value of values; track value.name; let i = $index) {
+      @for (value of values; track value.name) {
         <li class="value" appReveal>
-          <span class="value__num">0{{ i + 1 }}</span>
+          <span class="value__mark" aria-hidden="true"></span>
           <h3 class="value__name">{{ value.name }}</h3>
           <p class="value__text">{{ value.text }}</p>
           <svg class="value__sprout" viewBox="0 0 40 40" aria-hidden="true">

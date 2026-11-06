@@ -20,8 +20,8 @@
   --line: rgb(26 31 23 / 0.14);
   --line-light: rgb(243 238 226 / 0.18);
 
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
 
   --container: 1240px;
@@ -47,8 +47,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-size: 1rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -81,10 +81,14 @@ h3,
 h4 {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 400;
-  font-optical-sizing: auto;
+  font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.04;
+  line-height: 1.06;
+
+  // En títulos el énfasis se marca con color, no con cursiva.
+  em {
+    font-style: normal;
+  }
 }
 
 em {
@@ -141,32 +145,24 @@ section[id] {
   padding-inline: var(--gutter);
 }
 
-/* Etiqueta de cuaderno de campo: "01 — Quiénes somos" */
+/* Etiqueta de sección: barra naranja + texto en mayúsculas */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--field-2);
 
-  b {
-    font-weight: 500;
-    color: var(--orange-deep);
-  }
-
-  b::after {
+  &::before {
     content: '';
-    display: inline-block;
-    width: 2.25rem;
-    height: 1px;
-    margin-left: 0.75rem;
-    vertical-align: middle;
-    background: currentColor;
-    opacity: 0.5;
+    width: 2rem;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--orange);
   }
 }
 

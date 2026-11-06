@@ -1,6 +1,6 @@
 <section class="about" id="empresa">
   <div class="container">
-    <p class="eyebrow" appReveal><b>01</b> Quiénes somos</p>
+    <p class="eyebrow" appReveal>Quiénes somos</p>
 
     <div class="about__grid">
       <h2 class="about__statement" appReveal="60">
@@ -22,22 +22,15 @@
 
     <div class="about__feature">
       <figure class="about__art" appReveal>
-        <svg viewBox="0 0 480 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs>
-            <linearGradient id="ab-sky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#f3eee2" />
-              <stop offset="1" stop-color="#ecd08e" />
-            </linearGradient>
-          </defs>
-          <rect width="480" height="360" fill="url(#ab-sky)" />
-          <circle cx="338" [attr.cy]="horizon - 4" r="44" fill="#d6a43f" />
-          <path [attr.d]="treeline" fill="#2b4d37" />
-          <rect x="0" [attr.y]="horizon" width="480" height="240" fill="#7a5b3e" />
-          @for (furrow of furrows; track $index) {
-            <polygon [attr.points]="furrow.points" [attr.fill]="furrow.dark ? '#4f6230' : '#7a5b3e'" />
-          }
-          <rect x="0" [attr.y]="horizon" width="480" height="48" fill="url(#ab-sky)" opacity="0.28" />
-        </svg>
+        <img
+          src="images/surcos-trigo-800.webp"
+          srcset="images/surcos-trigo-800.webp 800w, images/surcos-trigo-1400.webp 1400w"
+          sizes="(max-width: 960px) 100vw, 55vw"
+          width="1400"
+          height="931"
+          alt="Hileras de brotes de trigo en un campo al atardecer"
+          loading="lazy"
+        />
       </figure>
 
       <blockquote class="about__quote" appReveal="100">

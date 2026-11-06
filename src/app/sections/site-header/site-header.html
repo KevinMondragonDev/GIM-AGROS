@@ -30,9 +30,7 @@
 <div class="menu" id="menu-movil" [class.is-open]="open()" [attr.inert]="open() ? null : ''">
   <nav class="container menu__nav" aria-label="Menú móvil">
     @for (link of links; track link.id; let i = $index) {
-      <a [href]="'#' + link.id" (click)="close()" [style.--i]="i">
-        <small>0{{ i + 1 }}</small>{{ link.label }}
-      </a>
+      <a [href]="'#' + link.id" (click)="close()" [style.--i]="i">{{ link.label }}</a>
     }
   </nav>
   <div class="container menu__foot">

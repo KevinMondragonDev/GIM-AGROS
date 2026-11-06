@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 /**
- * Logotipo horizontal de GIM AGROS.
- * `dark` es la versión a color para fondos claros; `light` es el negativo
- * para fondos oscuros. Los archivos viven en public/brand/.
+ * Logotipo horizontal de GIM AGROS. Siempre conserva sus colores:
+ * `dark` es la versión para fondos claros y `light` la misma versión
+ * sobre una placa crema para fondos oscuros. Archivos en public/brand/.
  */
 @Component({
   selector: 'app-logo',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<img [src]="src()" alt="GIM AGROS" width="1408" height="591" />`,
+  template: `<img [src]="file().src" alt="GIM AGROS" [width]="file().width" [height]="file().height" />`,
   styles: `
     :host {
       display: inline-block;
@@ -24,7 +24,9 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
 export class Logo {
   readonly tone = input<'dark' | 'light'>('dark');
 
-  protected readonly src = computed(() =>
-    this.tone() === 'light' ? 'brand/gim-agros-logo-negativo.svg' : 'brand/gim-agros-logo.svg',
+  protected readonly file = computed(() =>
+    this.tone() === 'light'
+      ? { src: 'brand/gim-agros-logo-fondo-oscuro.svg', width: 1504, height: 671 }
+      : { src: 'brand/gim-agros-logo.svg', width: 1408, height: 591 },
   );
 }

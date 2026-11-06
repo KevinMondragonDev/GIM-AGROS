@@ -1,12 +1,7 @@
 <section class="hero" id="inicio">
   <div class="container hero__grid">
     <div class="hero__copy">
-      <p class="eyebrow hero__eyebrow" appReveal>
-        <span class="hero__dot" aria-hidden="true"></span>
-        Insumos agrícolas · Atención profesional
-      </p>
-
-      <h1 class="hero__title" appReveal="80">
+      <h1 class="hero__title" appReveal>
         Impulsamos el desarrollo <em>agrícola</em>
       </h1>
 
@@ -31,7 +26,16 @@
 
     <figure class="hero__figure" appReveal="120">
       <div class="hero__frame">
-        <app-field-mosaic />
+        <img
+          src="images/campo-aereo-800.webp"
+          srcset="images/campo-aereo-800.webp 800w, images/campo-aereo-1200.webp 1200w"
+          sizes="(max-width: 960px) 100vw, 42vw"
+          width="1200"
+          height="900"
+          alt="Vista aérea de parcelas agrícolas con distintos cultivos"
+          fetchpriority="high"
+        />
+        <span class="hero__tag" aria-hidden="true">Cada cultivo, un reto</span>
       </div>
       <figcaption class="hero__caption">
         <span>Fig. 01</span>
@@ -44,7 +48,7 @@
     <ol class="hero__facts">
       @for (fact of facts; track fact; let i = $index) {
         <li [appReveal]="i * 90">
-          <span>0{{ i + 1 }}</span>
+          <span class="hero__leaf" aria-hidden="true"></span>
           {{ fact }}
         </li>
       }

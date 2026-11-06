@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CONTACT, NAV_LINKS } from '../../content';
+import { CONTACT, NAV_LINKS, PHOTO_CREDITS } from '../../content';
 import { Logo } from '../../shared/logo';
 
 @Component({
@@ -35,6 +35,13 @@ import { Logo } from '../../shared/logo';
 
         <div class="footer__bottom">
           <span>© {{ year }} GIM AGROS. Comercialización de insumos agrícolas.</span>
+          <span>
+            Fotografías:
+            @for (photo of photos; track photo.url; let last = $last) {
+              <a [href]="photo.url" target="_blank" rel="noopener">{{ photo.author }}</a>{{ last ? '' : ', ' }}
+            }
+            en Unsplash.
+          </span>
         </div>
       </div>
     </footer>
@@ -72,8 +79,7 @@ import { Logo } from '../../shared/logo';
         margin-top: 1.5rem;
         font-family: var(--font-display);
         font-size: 1.35rem;
-        font-weight: 300;
-        font-style: italic;
+        font-weight: 500;
         opacity: 0.85;
       }
     }
@@ -132,6 +138,10 @@ import { Logo } from '../../shared/logo';
     }
 
     .footer__bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 2rem;
       margin-top: clamp(3rem, 6vw, 4.5rem);
       padding-top: 1.5rem;
       border-top: 1px solid var(--line-light);
@@ -160,4 +170,5 @@ export class SiteFooter {
   protected readonly links = NAV_LINKS;
   protected readonly contact = CONTACT;
   protected readonly year = new Date().getFullYear();
+  protected readonly photos = PHOTO_CREDITS;
 }

@@ -18,9 +18,9 @@
 
 .values__title {
   grid-area: title;
-  font-size: clamp(2.6rem, 6vw, 5rem);
-  font-weight: 350;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.3rem, 5.2vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 .values__intro {
@@ -38,7 +38,7 @@
 .value {
   position: relative;
   display: grid;
-  grid-template-columns: 4rem minmax(0, 5fr) minmax(0, 5fr) 3rem;
+  grid-template-columns: 1.5rem minmax(0, 5fr) minmax(0, 5fr) 3rem;
   gap: 1.5rem;
   align-items: center;
   padding: clamp(1.4rem, 2.6vw, 2rem) 0;
@@ -70,16 +70,22 @@
   }
 }
 
-.value__num {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--orange-deep);
+.value__mark {
+  width: 18px;
+  height: 8px;
+  border-radius: 8px 0;
+  background: var(--lime);
+  transition: background-color 0.3s;
+}
+
+.value:hover .value__mark {
+  background: var(--field-2);
 }
 
 .value__name {
-  font-size: clamp(2rem, 4.4vw, 3.6rem);
-  font-weight: 350;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.6rem, 3.6vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .value__text {
@@ -136,9 +142,9 @@
   }
 
   .value {
-    grid-template-columns: 2.5rem 1fr;
+    grid-template-columns: 1.5rem 1fr;
     gap: 0.4rem 1rem;
-    align-items: baseline;
+    align-items: center;
   }
 
   .value__text {

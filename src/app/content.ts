@@ -63,3 +63,10 @@ export const INTEREST_OPTIONS = [
   'Quiero ser cliente',
   'Otro motivo',
 ];
+
+/** Fotografías de Unsplash (licencia Unsplash: uso comercial gratuito). */
+export const PHOTO_CREDITS = [
+  { author: 'Bernd Dittrich', url: 'https://unsplash.com/photos/dlhzCetYszo' },
+  { author: 'Jan Kopřiva', url: 'https://unsplash.com/photos/LTMaAwxanGk' },
+  { author: 'James Baltz', url: 'https://unsplash.com/photos/jAt6cN6zl8M' },
+];

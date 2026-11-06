@@ -1,21 +1,37 @@
 <section class="purpose" id="proposito">
-  <svg class="purpose__contours" viewBox="0 0 1200 660" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    @for (d of contours; track $index; let i = $index) {
-      <path [attr.d]="d" [class.is-index]="i % 5 === 0" />
-    }
-  </svg>
+  <img
+    class="purpose__photo"
+    src="images/aspersoras-1000.webp"
+    srcset="images/aspersoras-1000.webp 1000w, images/aspersoras-1600.webp 1600w"
+    sizes="100vw"
+    alt=""
+    loading="lazy"
+  />
 
   <div class="container purpose__inner">
-    <p class="eyebrow" appReveal><b>02</b> Propósito</p>
+    <p class="eyebrow" appReveal>Propósito</p>
+    <h2 class="purpose__title" appReveal="60">Misión y visión</h2>
 
     <div class="purpose__grid">
-      <article class="purpose__item" appReveal="60">
-        <h2 class="purpose__label">Nuestra misión</h2>
+      <article class="purpose__item purpose__item--mission" appReveal="100">
+        <span class="purpose__icon" aria-hidden="true">
+          <svg viewBox="6 8 36 36">
+            <path d="M24 42V22" />
+            <path d="M24 30c-8 0-12-5-12-13 8 0 12 5 12 13zM24 24c0-8 5-13 13-13 0 8-5 13-13 13z" class="fill" />
+          </svg>
+        </span>
+        <h3 class="purpose__label">Nuestra misión</h3>
         <p class="purpose__text">{{ mission }}</p>
       </article>
 
-      <article class="purpose__item" appReveal="160">
-        <h2 class="purpose__label">Nuestra visión</h2>
+      <article class="purpose__item purpose__item--vision" appReveal="180">
+        <span class="purpose__icon" aria-hidden="true">
+          <svg viewBox="2 4 44 44">
+            <path d="M9 30a15 15 0 0 1 30 0" />
+            <path d="M5 36h38M11 42h26" />
+          </svg>
+        </span>
+        <h3 class="purpose__label">Nuestra visión</h3>
         <p class="purpose__text">{{ vision }}</p>
       </article>
     </div>
