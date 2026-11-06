@@ -1,0 +1,44 @@
+<header class="header" [class.is-solid]="scrolled() && !open()">
+  <div class="container header__bar">
+    <a href="#inicio" class="header__brand" aria-label="GIM AGROS, ir al inicio" (click)="close()">
+      <app-logo [tone]="open() ? 'light' : 'dark'" />
+    </a>
+
+    <nav class="header__nav" aria-label="Principal">
+      @for (link of links; track link.id) {
+        <a [href]="'#' + link.id" [class.is-active]="active() === link.id">{{ link.label }}</a>
+      }
+    </nav>
+
+    <a href="#contacto" class="btn btn--sm header__cta">Solicitar información</a>
+
+    <button
+      type="button"
+      class="header__toggle"
+      [class.is-open]="open()"
+      [attr.aria-expanded]="open()"
+      aria-controls="menu-movil"
+      (click)="toggle()"
+    >
+      <span class="sr-only">{{ open() ? 'Cerrar menú' : 'Abrir menú' }}</span>
+      <span class="header__toggle-line"></span>
+      <span class="header__toggle-line"></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu-movil" [class.is-open]="open()" [attr.inert]="open() ? null : ''">
+  <nav class="container menu__nav" aria-label="Menú móvil">
+    @for (link of links; track link.id; let i = $index) {
+      <a [href]="'#' + link.id" (click)="close()" [style.--i]="i">
+        <small>0{{ i + 1 }}</small>{{ link.label }}
+      </a>
+    }
+  </nav>
+  <div class="container menu__foot">
+    <a href="#contacto" class="btn btn--orange" (click)="close()">Solicitar información</a>
+    @if (contact.email) {
+      <a class="menu__mail" [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+    }
+  </div>
+</div>

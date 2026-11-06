@@ -1,0 +1,151 @@
+.values {
+  padding-block: var(--section-y);
+}
+
+.values__head {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  grid-template-areas:
+    'eyebrow eyebrow'
+    'title intro';
+  gap: 2rem clamp(2rem, 6vw, 6rem);
+  align-items: end;
+
+  .eyebrow {
+    grid-area: eyebrow;
+  }
+}
+
+.values__title {
+  grid-area: title;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 350;
+  letter-spacing: -0.03em;
+}
+
+.values__intro {
+  grid-area: intro;
+  color: var(--ink-soft);
+}
+
+.values__list {
+  margin: clamp(3rem, 6vw, 4.5rem) 0 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.value {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 5fr) minmax(0, 5fr) 3rem;
+  gap: 1.5rem;
+  align-items: center;
+  padding: clamp(1.4rem, 2.6vw, 2rem) 0;
+  border-top: 1px solid var(--line);
+  isolation: isolate;
+
+  // Banda de color que "siembra" la fila al pasar el cursor.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 calc(var(--gutter) * -0.5);
+    z-index: -1;
+    background: var(--orange-soft);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s var(--ease);
+  }
+
+  &:hover::before {
+    transform: scaleY(1);
+  }
+
+  &:hover .value__stem {
+    stroke-dashoffset: 0;
+  }
+
+  &:hover .value__leaf {
+    transform: scale(1);
+  }
+}
+
+.value__num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--orange-deep);
+}
+
+.value__name {
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
+  font-weight: 350;
+  letter-spacing: -0.03em;
+}
+
+.value__text {
+  max-width: 28rem;
+  color: var(--ink-soft);
+}
+
+.value__sprout {
+  width: 2.5rem;
+  height: 2.5rem;
+  justify-self: end;
+}
+
+.value__stem {
+  fill: none;
+  stroke: var(--field);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  transition: stroke-dashoffset 0.4s var(--ease);
+}
+
+.value__leaf {
+  fill: var(--field);
+  transform: scale(0);
+  transform-box: fill-box;
+  transition: transform 0.45s var(--ease) 0.2s;
+
+  &--l {
+    transform-origin: right bottom;
+  }
+
+  &--r {
+    transform-origin: left bottom;
+    transition-delay: 0.3s;
+  }
+}
+
+@media (hover: none) {
+  .value__sprout {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .values__head {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'eyebrow'
+      'title'
+      'intro';
+    gap: 1.25rem;
+  }
+
+  .value {
+    grid-template-columns: 2.5rem 1fr;
+    gap: 0.4rem 1rem;
+    align-items: baseline;
+  }
+
+  .value__text {
+    grid-column: 2;
+  }
+
+  .value__sprout {
+    display: none;
+  }
+}

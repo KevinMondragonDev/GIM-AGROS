@@ -1,0 +1,23 @@
+<section class="purpose" id="proposito">
+  <svg class="purpose__contours" viewBox="0 0 1200 660" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    @for (d of contours; track $index; let i = $index) {
+      <path [attr.d]="d" [class.is-index]="i % 5 === 0" />
+    }
+  </svg>
+
+  <div class="container purpose__inner">
+    <p class="eyebrow" appReveal><b>02</b> Propósito</p>
+
+    <div class="purpose__grid">
+      <article class="purpose__item" appReveal="60">
+        <h2 class="purpose__label">Nuestra misión</h2>
+        <p class="purpose__text">{{ mission }}</p>
+      </article>
+
+      <article class="purpose__item" appReveal="160">
+        <h2 class="purpose__label">Nuestra visión</h2>
+        <p class="purpose__text">{{ vision }}</p>
+      </article>
+    </div>
+  </div>
+</section>

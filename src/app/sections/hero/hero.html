@@ -1,0 +1,53 @@
+<section class="hero" id="inicio">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow hero__eyebrow" appReveal>
+        <span class="hero__dot" aria-hidden="true"></span>
+        Insumos agrícolas · Atención profesional
+      </p>
+
+      <h1 class="hero__title" appReveal="80">
+        Impulsamos el desarrollo <em>agrícola</em>
+      </h1>
+
+      <p class="hero__lead" appReveal="160">
+        En GIM AGROS creemos en el potencial del campo y en la importancia de contar con soluciones que
+        respondan a las necesidades de cada productor.
+      </p>
+
+      <p class="hero__text" appReveal="220">
+        Nos dedicamos a la comercialización de insumos agrícolas, con un enfoque profesional, cercano y
+        comprometido con el desarrollo del sector.
+      </p>
+
+      <div class="hero__actions" appReveal="280">
+        <a class="btn" href="#contacto">
+          Solicitar información
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
+        </a>
+        <a class="link-underline" href="#empresa">Conoce nuestra empresa</a>
+      </div>
+    </div>
+
+    <figure class="hero__figure" appReveal="120">
+      <div class="hero__frame">
+        <app-field-mosaic />
+      </div>
+      <figcaption class="hero__caption">
+        <span>Fig. 01</span>
+        Desde arriba, el campo es un mosaico: cada parcela tiene necesidades distintas.
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="container">
+    <ol class="hero__facts">
+      @for (fact of facts; track fact; let i = $index) {
+        <li [appReveal]="i * 90">
+          <span>0{{ i + 1 }}</span>
+          {{ fact }}
+        </li>
+      }
+    </ol>
+  </div>
+</section>

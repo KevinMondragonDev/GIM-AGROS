@@ -1,0 +1,51 @@
+<section class="about" id="empresa">
+  <div class="container">
+    <p class="eyebrow" appReveal><b>01</b> Quiénes somos</p>
+
+    <div class="about__grid">
+      <h2 class="about__statement" appReveal="60">
+        Acercamos insumos y soluciones a <em>productores y profesionales</em> del campo.
+      </h2>
+
+      <div class="about__body">
+        <p appReveal="120">
+          GIM AGROS es una empresa del sector agrícola. Trabajamos con una visión orientada a la calidad del
+          servicio, la confianza comercial y la construcción de relaciones duraderas con nuestros clientes.
+        </p>
+        <ul class="about__pillars" appReveal="180">
+          @for (pillar of pillars; track pillar) {
+            <li>{{ pillar }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="about__feature">
+      <figure class="about__art" appReveal>
+        <svg viewBox="0 0 480 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="ab-sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f3eee2" />
+              <stop offset="1" stop-color="#ecd08e" />
+            </linearGradient>
+          </defs>
+          <rect width="480" height="360" fill="url(#ab-sky)" />
+          <circle cx="338" [attr.cy]="horizon - 4" r="44" fill="#d6a43f" />
+          <path [attr.d]="treeline" fill="#2b4d37" />
+          <rect x="0" [attr.y]="horizon" width="480" height="240" fill="#7a5b3e" />
+          @for (furrow of furrows; track $index) {
+            <polygon [attr.points]="furrow.points" [attr.fill]="furrow.dark ? '#4f6230' : '#7a5b3e'" />
+          }
+          <rect x="0" [attr.y]="horizon" width="480" height="48" fill="url(#ab-sky)" opacity="0.28" />
+        </svg>
+      </figure>
+
+      <blockquote class="about__quote" appReveal="100">
+        <p>Entendemos que cada cultivo y cada productor enfrentan desafíos diferentes.</p>
+        <footer>
+          Por eso, buscamos ofrecer una atención clara, responsable y adaptada a sus necesidades.
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</section>

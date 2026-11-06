@@ -1,0 +1,26 @@
+<section class="values" id="valores">
+  <div class="container">
+    <div class="values__head">
+      <p class="eyebrow" appReveal><b>03</b> Valores</p>
+      <h2 class="values__title" appReveal="60">Nuestros valores</h2>
+      <p class="values__intro" appReveal="120">
+        Cinco principios que orientan nuestra forma de trabajar y de atender a cada cliente.
+      </p>
+    </div>
+
+    <ol class="values__list">
+      @for (value of values; track value.name; let i = $index) {
+        <li class="value" appReveal>
+          <span class="value__num">0{{ i + 1 }}</span>
+          <h3 class="value__name">{{ value.name }}</h3>
+          <p class="value__text">{{ value.text }}</p>
+          <svg class="value__sprout" viewBox="0 0 40 40" aria-hidden="true">
+            <path class="value__stem" d="M20 38V18" />
+            <path class="value__leaf value__leaf--l" d="M20 26c-7 0-11-4-11-11 7 0 11 4 11 11z" />
+            <path class="value__leaf value__leaf--r" d="M20 21c0-7 4-11 11-11 0 7-4 11-11 11z" />
+          </svg>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
