@@ -45,13 +45,34 @@
   </div>
 
   <div class="container">
-    <ol class="hero__facts">
-      @for (fact of facts; track fact; let i = $index) {
-        <li [appReveal]="i * 90">
-          <span class="hero__leaf" aria-hidden="true"></span>
-          {{ fact }}
-        </li>
-      }
-    </ol>
+    <div class="hero__brands" appReveal>
+      <p class="eyebrow">Marcas que trabajamos</p>
+      <div class="hero__brands-track">
+        <div class="hero__brands-slider">
+          @for (brand of brands; track brand.alt; let i = $index) {
+            <img
+              class="hero__brand-logo"
+              [src]="brand.src"
+              [alt]="brand.alt"
+              loading="lazy"
+              width="120"
+              height="60"
+            />
+          }
+          <!-- Duplicado para loop infinito -->
+          @for (brand of brands; track brand.alt; let i = $index) {
+            <img
+              class="hero__brand-logo"
+              [src]="brand.src"
+              [alt]="brand.alt"
+              loading="lazy"
+              width="120"
+              height="60"
+              aria-hidden="true"
+            />
+          }
+        </div>
+      </div>
+    </div>
   </div>
 </section>

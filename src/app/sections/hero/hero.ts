@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { HERO_FACTS } from '../../content';
+import { BRAND_LOGOS, HERO_FACTS } from '../../content';
 import { RevealDirective } from '../../shared/reveal.directive';
 
 @Component({
@@ -11,4 +11,5 @@ import { RevealDirective } from '../../shared/reveal.directive';
 })
 export class Hero {
   protected readonly facts = HERO_FACTS;
+  protected readonly brands = BRAND_LOGOS;
 }
