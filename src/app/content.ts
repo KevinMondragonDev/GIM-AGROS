@@ -31,6 +31,25 @@ export const HERO_FACTS = [
   'Relaciones comerciales duraderas',
 ];
 
+export const BRAND_LOGOS = [
+  { src: 'logos_separados/adama.png', alt: 'Adama' },
+  { src: 'logos_separados/agro-lucava.png', alt: 'Agro Lucava' },
+  { src: 'logos_separados/aicl.png', alt: 'AICL' },
+  { src: 'logos_separados/altiara.png', alt: 'Altiara' },
+  { src: 'logos_separados/anajalsa.png', alt: 'Anajalsa' },
+  { src: 'logos_separados/bioatlantis.png', alt: 'BioAtlantis' },
+  { src: 'logos_separados/calidra.png', alt: 'Calidra' },
+  { src: 'logos_separados/corteva.png', alt: 'Corteva' },
+  { src: 'logos_separados/innovak-global.png', alt: 'Innovak Global' },
+  { src: 'logos_separados/interchem-foliares.png', alt: 'Interchem Foliares' },
+  { src: 'logos_separados/intermag.png', alt: 'Intermag' },
+  { src: 'logos_separados/metalosate.png', alt: 'Metalosate' },
+  { src: 'logos_separados/nufarm.png', alt: 'Nufarm' },
+  { src: 'logos_separados/parvitra.png', alt: 'Parvitra' },
+  { src: 'logos_separados/sulcona.png', alt: 'Sulcona' },
+  { src: 'logos_separados/versa.png', alt: 'Versa' },
+];
+
 export const ABOUT_PILLARS = ['Calidad en el servicio', 'Confianza comercial', 'Relaciones duraderas'];
 
 export const MISSION =
